@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  appStatus = new Promise((res, rej) => {
+    setTimeout(() => {
+      res('Ready');
+    }, 3000);
+  });
   lessons = [
     {
       lessonComplexity: 'normal',

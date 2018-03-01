@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>{{ appStatus | async }}</h2>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <ul class="list-group">
@@ -9,7 +10,9 @@
             class="badge">
             {{ lesson.status }}
           </span>
-          <strong>{{ lesson.name }}</strong> | {{ lesson.lessonComplexity }} | {{ lesson.started }}
+          <strong>{{ lesson.name | shorten:5 }}</strong> |
+          {{ lesson.lessonComplexity | uppercase }} |
+          {{ lesson.started | date:'medium' }}
         </li>
       </ul>
     </div>
